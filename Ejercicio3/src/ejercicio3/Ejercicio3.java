@@ -9,6 +9,7 @@ public class Ejercicio3 {
     
   
     public static void main(String[] args, int dato) {
+        
         Scanner sc= new Scanner(System.in);
         
         Listadoble ld = new Listadoble();
@@ -68,9 +69,7 @@ class Listadoble{
     nodo actual = new nodo();
     actual = prime.sig;
     M = prime;
-    int n=0;
-    n = M;
-    
+
     do{
         
       actual=actual.sig;  
