@@ -8,8 +8,26 @@ public class Ejercicio3 {
 
     
   
-    public static void main(String[] args) {
+    public static void main(String[] args, int dato) {
+        Scanner sc= new Scanner(System.in);
         
+        Listadoble ld = new Listadoble();
+        nodo n = new nodo();
+        int op=0;
+        
+        do{
+            
+        ld.Newnodo(dato);
+            System.out.println("Introducir otro dato?");
+            System.out.println("1.si");
+            System.out.println("2.no");
+            op=sc.nextInt();
+            
+        }while(op!=2);
+        
+        ld.recorridoMayor();
+        ld.recorridomenor();
+        ld.valormedio();
     }
     
 }
@@ -50,11 +68,13 @@ class Listadoble{
     nodo actual = new nodo();
     actual = prime.sig;
     M = prime;
+    int n=0;
+    n = M;
     
     do{
         
       actual=actual.sig;  
-     
+      
       if(M < actual)
       {
           M=actual;
@@ -86,5 +106,20 @@ class Listadoble{
     }
 }
 
+    void valormedio(){
+    nodo a = new nodo();
+    nodo L = new nodo();
+    int i=0,medio=0;
+     a = L;
+       int sum=0;
+       while (a.sig != null){
+           i++;
+           sum+=a.dato;
+           a=a.sig;
+       }
+       
+       medio=sum/i;
+       System.out.println("Elvalor medio todos los elementos de la lista es: " + medio);
+   }
+    }
     
-}
